@@ -1,4 +1,4 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, url_for
 
 app = Flask(__name__)
 
@@ -6,9 +6,9 @@ app = Flask(__name__)
 def homepage():
     return render_template("homepage.html")
 
-@app.route("/profile")
-def profile():
-    return "Perfil do Usuário"
+@app.route("/profile/<user>")
+def profile(user):
+    return render_template("profile.html", user=user)
 
 if __name__ == "__main__":
     app.run(debug=True)
