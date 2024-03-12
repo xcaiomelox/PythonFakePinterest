@@ -17,6 +17,21 @@
 
 <h2> Agora vamos construir</h2>
 
+{% block form %}
+<form method="POST">
+    {{ form.csrf_token }}
+
+    {{ form.email.label() }}
+    {{ form.email() }}
+
+    {{ form.password.label() }}
+    {{ form.password() }}
+
+    {{ form.confirm_button() }}
+
+</form>
+{% endblock %}
+
 </body>
 {% endblock %}
 </html>
