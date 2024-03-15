@@ -6,5 +6,12 @@ FakePinterest - {{ user }}
 
 {% block body %}
 <h1> Perfil do Usuário: {{ user.username }} </h1>
+
+<h1>
+    <img src="{{ url_for('static', filename='photos_posts/defaut.png') }}">
+</h1>
+
 <a href="{{ url_for('logout') }}">Sair</a>
+
+
 {% endblock %}
